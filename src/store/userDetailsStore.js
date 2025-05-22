@@ -8,14 +8,12 @@ import { toast } from "react-toastify";
  * Creates a Zustand store to handle user actions and state updates.
  */
 const userDetailsStore = create((set, get) => ({
-  
-  
+
   getSpecificUserLoader: false,
   usersData: [],
   selectedUser: null,
   user: null,
   error: null,
-
 
   /**
    * Fetches specific user details from API.

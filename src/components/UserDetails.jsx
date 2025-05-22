@@ -9,9 +9,9 @@ const UserDetails = () => {
   const { selectedUser, getSpecificUserData, getSpecificUserLoader } = userDetailsStore();
 
   /**
-   * Fetches user details when the user ID changes.
-   * @param {string} id - The user ID from the URL.
-   */
+  * @param {string} id - Unique identifier for the user.
+  * @return {void} Triggers data retrieval when the user ID changes.
+  */
   useEffect(() => {
     getSpecificUserData(id);
   }, [id]);
@@ -24,8 +24,6 @@ const UserDetails = () => {
         </div>
       ) : (
         <div className="p-6 h-auto shadow-2xl bg-white rounded-lg w-full  max-w-md mx-auto">
-
-
           <div className="mt-4 space-y-3">
             <div className="relative bg-sky-500 w-full m-auto max-w-sm h-[100px] rounded-lg flex justify-center items-end pb-4"></div>
             {selectedUser?.image && (
@@ -37,14 +35,10 @@ const UserDetails = () => {
                     {selectedUser?.name?.trim()?.slice(0, 1).toUpperCase()}
                   </h3>
                 )}
-
-
               </div>
-
-
             )}
-            <div className=" flex gap-10 pt-10">
 
+            <div className=" flex gap-10 pt-10">
               <div className="flex flex-col gap-6 opacity-40">
                 <p>Name:</p>
                 <p>Email:</p>
@@ -74,12 +68,8 @@ const UserDetails = () => {
                   <p className="text-gray-700">
                     {selectedUser?.status ? "Active" : "Inactive"}</p>
                 </p>
-
               </div>
-
             </div>
-
-
           </div>
 
           <div className="flex mt-6 ">
@@ -89,7 +79,6 @@ const UserDetails = () => {
             >
               Back
             </button>
-
           </div>
         </div>
       )}
